@@ -7,21 +7,17 @@ import { Todo } from 'src/Todo';
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent {
-  todos: Todo[] = [];
+  todos: Todo[];
 
   constructor() {
     this.todos = [
       {
-        sno: 1,
         title: 'Revise Java',
-        desc: 'description',
-        active: true,
+        desc: 'description'
       },
       {
-        sno: 2,
         title: 'Make a site using wp',
-        desc: 'description',
-        active: true,
+        desc: 'description'
       },
     ];
   }
@@ -29,6 +25,11 @@ export class TodosComponent {
   delTodo(todo: Todo) {
     const index = this.todos.indexOf(todo);
     this.todos.splice(index, 1);
+  }
+
+  addingTodo(todo: Todo) {
+    console.log(todo);
+    this.todos.push(todo);
   }
 
 }
